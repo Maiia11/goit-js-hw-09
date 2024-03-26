@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    width: 408px;
+    height: 296px;
+    padding: 24px;
     
 }
 
@@ -16,6 +19,17 @@ label {
     line-height: 1.5;
     letter-spacing: 0.04em;
     color: #2e2f42;
+   
+}
+
+input {
+    border: 1px solid #808080;
+        border-radius: 4px;
+        width: 360px;
+        height: 40px;
+}
+
+textarea {
     border: 1px solid #808080;
         border-radius: 4px;
         width: 360px;
@@ -42,6 +56,7 @@ button:hover {
     background-color: #6c8cff;
 }
 
-label:hover {
+input:hover,
+textarea:hover {
     border-color: black;
 }
