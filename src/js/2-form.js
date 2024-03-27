@@ -9,26 +9,27 @@ form.addEventListener("submit", handleSubmit);
 
 fillLabel();
 
+
 function handleSubmit(event) {
     event.preventDefault();
     if (form.email.value.trim() !== "" && form.message.value.trim() !== "") {
-        console.log(`email: ${form.email.value}`);
-        console.log(`message: ${form.message.value}`);
+        console.log(JSON.parse(localStorage.getItem(formKey)));
+        event.currentTarget.reset(); 
+        localStorage.removeItem(formKey);
    }
-    event.currentTarget.reset();
-    localStorage.removeItem(formKey);
+     
     
 }
-
-
 function onLabelInput() {
-    const saveInfo = {
-        email: form.email.value.trim(),
-        message: form.message.value.trim(),
-    };
-    localStorage.setItem(formKey, JSON.stringify(saveInfo));
+        const saveInfo = {
+            email: form.email.value.trim(),
+            message: form.message.value.trim(),
+        };
+        localStorage.setItem(formKey, JSON.stringify(saveInfo));
     
 }
+
+
 
 function fillLabel() {
     const savedInform = JSON.parse(localStorage.getItem(formKey));
@@ -39,3 +40,7 @@ function fillLabel() {
         form.message.value = message;
     }
 }
+
+
+
+
