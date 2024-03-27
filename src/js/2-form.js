@@ -11,6 +11,10 @@ fillLabel();
 
 function handleSubmit(event) {
     event.preventDefault();
+    if (form.email.value.trim() !== "" && form.message.value.trim() !== "") {
+        console.log(`email: ${form.email.value}`);
+        console.log(`message: ${form.message.value}`);
+   }
     event.currentTarget.reset();
     localStorage.removeItem(formKey);
     
